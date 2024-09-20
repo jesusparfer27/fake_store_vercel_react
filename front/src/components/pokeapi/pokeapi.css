@@ -1,0 +1,12 @@
+.LogoPokemon {
+    width: 50%;
+    display: flex;
+    transform: translate(50%);
+
+}
+
+.pokemon {
+    display: flex;
+    justify-content: space-between;
+}
+

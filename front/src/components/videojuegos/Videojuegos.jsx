@@ -10,12 +10,14 @@ const Videojuegos = () => {
     const [productsPerPage, setProductsPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const { VITE_API_GAMESHOP } = import.meta.env
+
     const lastIndex = currentPage * productsPerPage
     const firstIndex = lastIndex - productsPerPage
 
     const getData = async () => {
         try {
-            const response = await fetch(`https://api.rawg.io/api/games?key=3b3d36f059d14aa99642f5fa40e8aea3`);
+            const response = await fetch(`${VITE_API_GAMESHOP}`);
             if (!response.ok) {
                 throw new Error('La respuesta fue erronea')
             }

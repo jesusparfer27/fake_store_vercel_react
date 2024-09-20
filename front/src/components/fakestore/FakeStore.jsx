@@ -8,6 +8,8 @@ const FakeStore = () => {
     const [productsPerPage, setProductsPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const { VITE_API_FAKESTORE } = import.meta.env
+
     const totalProducts = data.length
     const lastIndex = currentPage * productsPerPage
     const firstIndex = lastIndex - productsPerPage
@@ -25,7 +27,7 @@ const FakeStore = () => {
                     signal: controller.signal
                 }
 
-                const response = await fetch('https://fakestoreapi.com/products/', options)
+                const response = await fetch(`${VITE_API_FAKESTORE}`, options)
 
                 if (!response.ok) {
                     throw new Error(`Error en la solicitud: ${response.status}`)

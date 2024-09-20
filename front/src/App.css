@@ -7,6 +7,13 @@ html {
     font-style: normal;
 }
 
+body {
+    font-family: "Sora", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
 h1 {
     font-size: 2rem;
     text-align: center;
